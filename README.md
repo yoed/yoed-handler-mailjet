@@ -3,6 +3,12 @@ yoed-client-mailjet
 
 Yo'ed client which send an email via Mailjet v3 API when someone Yo you.
 
+#Installation
+
+You need [`go`](http://golang.org/) package on your machine to get the source
+
+`go get github.com/yoed/yoed-client-mailjet`
+
 #Configuration
 
 Add a `config.json` file in the same folder than the program.
