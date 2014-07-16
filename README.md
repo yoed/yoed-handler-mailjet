@@ -1,4 +1,4 @@
-yoed-client-mailjet
+Yo'ed Mailjet
 ===================
 
 Yo'ed client which send an email via Mailjet v3 API when someone Yo you.
