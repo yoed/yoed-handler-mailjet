@@ -22,7 +22,7 @@ type Config struct {
 	Text string
 }
 
-func (c *Handler) Handle(username string) {
+func (c *Handler) Handle(username, handle string) {
 	client := &http.Client{}
 
 	data := url.Values {
@@ -32,7 +32,7 @@ func (c *Handler) Handle(username string) {
 		"text": {strings.Replace(c.Config.Text, "%username%", username, -1)},
 	}
 
-	log.Printf("Yo'ed by %s: sending an email to %s", username, c.Config.ToEmail)
+	log.Printf("Yo'ed by %s on %s: sending an email to %s", username, handle, c.Config.ToEmail)
 
 	req, _ := http.NewRequest("POST", "https://api.mailjet.com/v3/send/message", strings.NewReader(data.Encode()))
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
